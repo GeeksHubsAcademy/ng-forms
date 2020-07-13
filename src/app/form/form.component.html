@@ -1,0 +1,22 @@
+<input type="text" (keyup)="text=$event.target.value" [value]="text">
+<!-- <input type="text" (keyup.enter)="text=$event.target.value" [value]="text"> -->
+<input type="text" [(ngModel)]="text">
+<!-- <input type="text" #inputRef>
+<button (click)="setText(inputRef.value)">Enviar</button>
+<p>{{text}}</p> -->
+<mat-spinner></mat-spinner>
+<input type="email" required minlength="4" email [(ngModel)]="text" #inputRef="ngModel" (keyup)="showInputRef(inputRef)">
+
+<div class="errors" *ngIf="inputRef.touched && inputRef.control.errors as errors">
+    hay errores
+    <div class="required-error" *ngIf="errors.required">
+        El campo es requerido
+    </div>
+    <div class="required-error" *ngIf="errors.email">
+        El campo debe ser un email
+    </div>
+
+    <div class="required-error" *ngIf="errors.minlength">
+        El campo debe contener al menos {{errors.minlength.requiredLength}}, contiene: {{errors.minlength.actualLength}}
+    </div>
+</div>
