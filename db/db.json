@@ -1,0 +1,19 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Mi primer post",
+      "body": "Este es mi precioso primer post"
+    },
+    {
+      "title": "nuevo tercer post",
+      "body": "Este es mi nuevo detallado tercer post",
+      "id": 3
+    },
+    {
+      "title": "será el cuarto?",
+      "body": "no lo sé",
+      "id": 4
+    }
+  ]
+}

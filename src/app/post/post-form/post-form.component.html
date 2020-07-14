@@ -1,0 +1,16 @@
+<div class="post-form-container">
+    <!-- Template Driven Forms -->
+    <form #postForm="ngForm" (ngSubmit)="submitPost(postForm)">
+        <mat-form-field appearance="fill">
+            <mat-label>Título</mat-label>
+            <input matInput ngModel name="title" required>
+        </mat-form-field>
+        <br>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Contenido</mat-label>
+            <textarea matInput ngModel name="body"></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Añadir post</button>
+    </form>
+</div>

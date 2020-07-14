@@ -1,1 +1,5 @@
-<app-form></app-form>
+<header *ngIf="pathname!=='/' ">
+    <mat-icon routerLink="/">home</mat-icon>
+</header>
+<router-outlet></router-outlet>
+<footer *ngIf="pathname!=='/' ">footer</footer>
