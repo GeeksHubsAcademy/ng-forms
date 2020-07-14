@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { PostService } from '../post.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Post } from 'src/app/models/post.model';
 
 @Component({
   selector: 'app-post-form',
@@ -9,18 +10,36 @@ import { Router } from '@angular/router';
   styleUrls: ['./post-form.component.scss']
 })
 export class PostFormComponent implements OnInit {
-
-  constructor(private postService: PostService, private router:Router) { }
+  post = {
+    title: '',
+    body: ''
+  };
+  constructor(
+    private postService: PostService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      if (params.id) {
+        this.postService.getPostById(params.id)
+          .subscribe(post => {
+            this.post = post;
+          });
+      }
+    });
   }
   submitPost(postForm: NgForm): void {
     console.log(postForm);
     if (postForm.form.status === 'VALID') {
-      this.postService.insertPost(postForm.form.value)
-        .subscribe(()=>{
-          this.router.navigate(['/posts']);
-        });
+      if (this.post.hasOwnProperty('id')) {
+        this.postService.updatePost(this.post)
+          .subscribe(() => this.router.navigate(['/posts']));
+      } else {
+        this.postService.insertPost(this.post)
+          .subscribe(() => this.router.navigate(['/posts']));
+      }
     }
   }
 }

@@ -9,7 +9,6 @@ import { MaterialModule } from './material.module';
 import { PostListComponent } from './post/post-list/post-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostFormComponent } from './post/post-form/post-form.component';
-import { MainComponent } from './main/main.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 @NgModule({
@@ -18,7 +17,6 @@ import { DialogComponent } from './components/dialog/dialog.component';
     FormComponent,
     PostListComponent,
     PostFormComponent,
-    MainComponent,
     WelcomeComponent,
     DialogComponent,
   ],

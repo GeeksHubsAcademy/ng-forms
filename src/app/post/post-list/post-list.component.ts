@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PostService } from 'src/app/post/post.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from 'src/app/components/dialog/dialog.component';
+import { Post } from 'src/app/models/post.model';
 @Component({
   selector: 'app-post-list',
   templateUrl: './post-list.component.html',
@@ -14,20 +15,19 @@ export class PostListComponent implements OnInit {
   ngOnInit(): void {
     this.postService.getAllPosts();
   }
-  getPosts() {
+  getPosts(): Post[] {
     return this.postService.getPosts();
   }
-  openRemoveDialog(id: number) {
+  openRemoveDialog(id: number): void {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '250px',
       data: { title: 'Eliminar Post ' + id, body: '¿Estás seguro de eliminar el post?' }
     });
     dialogRef.afterClosed().subscribe(result => {
-      console.log('eliminando post...', result);
       if (result) {
-        this.postService.deletePost(id).subscribe(()=>{
+        this.postService.deletePost(id).subscribe(() => {
           this.postService.getAllPosts();
-        })
+        });
       }
     });
   }

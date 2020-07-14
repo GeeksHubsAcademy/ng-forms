@@ -6,14 +6,14 @@
       "body": "Este es mi precioso primer post"
     },
     {
-      "title": "nuevo tercer post",
-      "body": "Este es mi nuevo detallado tercer post",
-      "id": 3
-    },
-    {
       "title": "será el cuarto?",
       "body": "no lo sé",
       "id": 4
+    },
+    {
+      "title": "el quinto",
+      "body": "el quinto post",
+      "id": 5
     }
   ]
 }
