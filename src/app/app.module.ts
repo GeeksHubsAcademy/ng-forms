@@ -11,6 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { PostFormComponent } from './post/post-form/post-form.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { HeaderComponent } from './components/header/header.component';
+import { LoginComponent } from './user/login/login.component';
+import { DirectiveExampleDirective } from './directive-example.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +22,9 @@ import { DialogComponent } from './components/dialog/dialog.component';
     PostFormComponent,
     WelcomeComponent,
     DialogComponent,
+    HeaderComponent,
+    LoginComponent,
+    DirectiveExampleDirective,
   ],
   imports: [
     BrowserModule,

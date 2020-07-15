@@ -1,0 +1,14 @@
+<div class="login-container">
+
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm.form)" [ngClass]="{enviado:submitted}" [class.enviado]="submitted">
+        <input type="text" name="username" placeholder="Enter username" ngModel #username>
+        <input type="password" name="password" placeholder="Enter password" ngModel>
+        <!-- <form ngModelGroup="address">
+            <input type="text" name="street" placeholder="Enter street" ngModel>
+            <input type="password" name="number" placeholder="Enter number" ngModel>
+        </form> -->
+        <button type="submit">Login</button>
+    </form>
+    <div class="alert alert-danger">{{errorMsg}}</div>
+    {{loginForm.value | json}}
+</div>

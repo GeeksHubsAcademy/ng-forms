@@ -1,5 +1,4 @@
-<header *ngIf="pathname!=='/' ">
-    <mat-icon routerLink="/">home</mat-icon>
-</header>
+<app-header *ngIf="pathname!=='/' ">
+</app-header>
 <router-outlet></router-outlet>
-<footer *ngIf="pathname!=='/' ">footer</footer>
+<footer *ngIf="pathname!=='/' " appDirectiveExample>footer</footer>

@@ -1,19 +1,27 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "Mi primer post",
-      "body": "Este es mi precioso primer post"
-    },
-    {
-      "title": "será el cuarto?",
-      "body": "no lo sé",
-      "id": 4
-    },
-    {
-      "title": "el quinto",
-      "body": "el quinto post",
-      "id": 5
-    }
-  ]
+    "posts": [{
+            "id": 1,
+            "title": "Mi primer post",
+            "body": "Este es mi precioso primer post"
+        },
+        {
+            "title": "el quinto",
+            "body": "el quinto post",
+            "id": 5
+        },
+        {
+            "title": "hola",
+            "body": "qwer23",
+            "id": 6
+        }
+    ],
+    "users": [{
+        "id": 1,
+        "username": "Tomas",
+        "password": "mimamamemima"
+    }, {
+        "id": 2,
+        "username": "Luis",
+        "password": "1234"
+    }]
 }
