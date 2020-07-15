@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { PostListComponent } from 'src/app/post/post-list/post-list.component';
+import { PostCardComponent } from 'src/app/post/post-card/post-card.component';
 
 @Component({
   selector: 'app-dialog',
@@ -10,7 +10,7 @@ import { PostListComponent } from 'src/app/post/post-list/post-list.component';
 export class DialogComponent {
 
   constructor(
-    public dialogRef: MatDialogRef<PostListComponent>,
+    public dialogRef: MatDialogRef<PostCardComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { title: string, body: string }) { }
 
   onNoClick(): void {

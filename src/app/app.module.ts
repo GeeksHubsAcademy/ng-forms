@@ -14,6 +14,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './user/login/login.component';
 import { DirectiveExampleDirective } from './directive-example.directive';
+import { PostCardComponent } from './post/post-card/post-card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import { DirectiveExampleDirective } from './directive-example.directive';
     HeaderComponent,
     LoginComponent,
     DirectiveExampleDirective,
+    PostCardComponent,
   ],
   imports: [
     BrowserModule,

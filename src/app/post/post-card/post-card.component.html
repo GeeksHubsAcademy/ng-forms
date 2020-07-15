@@ -1,0 +1,12 @@
+<mat-card class="post">
+    <div class="content">
+        <h2>{{post.title}}</h2>
+        <p>{{post.body}}</p>
+    </div>
+    <div class="buttons">
+        <!-- <mat-icon routerLink="/posts/{{post.id}}">edit</mat-icon> -->
+
+        <mat-icon [routerLink]="['/posts',post.id]">edit</mat-icon>
+        <mat-icon (click)="openRemoveDialog(post.id)">remove_circle_outline</mat-icon>
+    </div>
+</mat-card>

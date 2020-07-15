@@ -1,16 +1,6 @@
 <div class="posts">
-    <mat-card class="post" *ngFor="let post of getPosts()">
-        <div class="content">
-            <h2>{{post.title}}</h2>
-            <p>{{post.body}}</p>
-        </div>
-        <div class="buttons">
-            <!-- <mat-icon routerLink="/posts/{{post.id}}">edit</mat-icon> -->
-
-            <mat-icon [routerLink]="['/posts',post.id]">edit</mat-icon>
-            <mat-icon (click)="openRemoveDialog(post.id)">remove_circle_outline</mat-icon>
-        </div>
-    </mat-card>
+    <app-post-card *ngFor="let post of getPosts()" [post]="post">
+    </app-post-card>
 </div>
 <div class="example-button-container" routerLink="/posts/new">
     <button mat-mini-fab color="primary" aria-label="Añadir post">
