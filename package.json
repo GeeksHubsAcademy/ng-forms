@@ -3,8 +3,9 @@
     "version": "0.0.0",
     "scripts": {
         "ng": "ng",
-        "start": "ng serve",
-        "build": "ng build",
+        "start": "serve dist/ng-forms",
+        "dev": "ng serve --open",
+        "build": "ng build --prod",
         "db": "json-server --watch db/db.json",
         "test": "ng test",
         "lint": "ng lint",
@@ -12,10 +13,13 @@
     },
     "private": true,
     "dependencies": {
+        "@angular-devkit/build-angular": "~0.1000.1",
         "@angular/animations": "~10.0.2",
         "@angular/cdk": "^10.0.1",
+        "@angular/cli": "~10.0.1",
         "@angular/common": "~10.0.2",
         "@angular/compiler": "~10.0.2",
+        "@angular/compiler-cli": "~10.0.2",
         "@angular/core": "~10.0.2",
         "@angular/forms": "~10.0.2",
         "@angular/material": "^10.0.1",
@@ -23,13 +27,12 @@
         "@angular/platform-browser-dynamic": "~10.0.2",
         "@angular/router": "~10.0.2",
         "rxjs": "~6.5.5",
+        "serve": "^11.3.2",
         "tslib": "^2.0.0",
+        "typescript": "~3.9.5",
         "zone.js": "~0.10.3"
     },
     "devDependencies": {
-        "@angular-devkit/build-angular": "~0.1000.1",
-        "@angular/cli": "~10.0.1",
-        "@angular/compiler-cli": "~10.0.2",
         "@types/node": "^12.11.1",
         "@types/jasmine": "~3.5.0",
         "@types/jasminewd2": "~2.0.3",
@@ -43,7 +46,6 @@
         "karma-jasmine-html-reporter": "^1.5.0",
         "protractor": "~7.0.0",
         "ts-node": "~8.3.0",
-        "tslint": "~6.1.0",
-        "typescript": "~3.9.5"
+        "tslint": "~6.1.0"
     }
 }
