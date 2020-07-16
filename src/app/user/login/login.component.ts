@@ -9,6 +9,7 @@ import { UserService } from '../user.service';
 export class LoginComponent implements OnInit, AfterContentInit, AfterViewInit, OnDestroy, DoCheck, AfterViewChecked, AfterContentChecked {
   submitted: boolean;
   errorMsg: string;
+  successMsg: string;
   @ViewChild('username') username: ElementRef;
   constructor(private userService: UserService) { }
   ngOnInit(): void {
@@ -42,6 +43,10 @@ export class LoginComponent implements OnInit, AfterContentInit, AfterViewInit, 
       console.log(user);
       if (!user) {
         this.errorMsg = 'Usuario o contraseña incorrectos';
+      } else {
+        localStorage.setItem('user', JSON.stringify(user));
+        this.errorMsg = '';
+        this.successMsg = 'Bienvenido ' + user.username;
       }
     } catch (error) {
       console.error(error);

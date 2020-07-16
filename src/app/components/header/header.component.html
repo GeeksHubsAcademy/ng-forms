@@ -1,4 +1,9 @@
 <header>
     <mat-icon routerLink="/">home</mat-icon>
-    <span routerLink="/login">Login</span>
+    <span routerLink="/login" *ngIf="!user">Login</span>
+    <div class="userZone" *ngIf="user">
+        <mat-icon>account_circle</mat-icon>
+        <span>{{user.username}}</span>
+        <span (click)="logout()">Logout</span>
+    </div>
 </header>
