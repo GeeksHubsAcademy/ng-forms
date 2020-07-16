@@ -6,7 +6,6 @@
         "start": "serve dist/ng-forms",
         "dev": "ng serve --open",
         "build": "ng build --prod",
-        "db": "json-server --watch db/db.json",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e"
